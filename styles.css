@@ -1,0 +1,177 @@
+:root {
+  --primary-color: #2c3e50;
+  --secondary-color: #27ae60;
+  --background-color: #ecf0f1;
+  --text-color: #34495e;
+  --code-bg-color: #f7f9fb;
+}
+
+body {
+  font-family: 'Roboto', sans-serif;
+  background-color: var(--background-color);
+  color: var(--text-color);
+  line-height: 1.6;
+}
+
+#profile .row {
+  display: flex;
+  justify-content: center;
+}
+
+#profile .col-auto {
+  padding: 0 15px;
+}
+
+.profile-img {
+  width: 200px;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 50%;
+  /* 원형 이미지 */
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  /* 그림자 효과 */
+  background-color: #f0f0f0;
+  /* 약간의 배경색 */
+  padding: 5px;
+  /* 이미지와 배경 사이의 간격 */
+}
+
+/* 선택적: 이미지 호버 효과 */
+.profile-img:hover {
+  transform: scale(1.05);
+  transition: transform 0.3s ease;
+}
+
+#table-of-contents {
+  position: fixed;
+  top: 70px;
+  right: 20px;
+  z-index: 1000;
+  background: var(--code-bg-color);
+  border: 1px solid var(--secondary-color);
+  border-radius: 5px;
+  padding: 15px;
+  max-width: 250px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  font-family: 'Fira Code', monospace;
+}
+
+#table-of-contents ul {
+  list-style-type: none;
+  padding-left: 0;
+}
+
+#table-of-contents ul li {
+  margin-bottom: 10px;
+}
+
+#table-of-contents a {
+  color: var(--primary-color);
+  text-decoration: none;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  color: var(--primary-color);
+  font-family: 'Fira Code', monospace;
+}
+
+.card {
+  border: none;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+  background-color: var(--code-bg-color);
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+}
+
+.list-group-item {
+  background-color: var(--code-bg-color);
+  border-left: 3px solid var(--secondary-color);
+  margin-bottom: 10px;
+}
+
+.tech-stack {
+  font-family: 'Fira Code', monospace;
+  background-color: var(--primary-color);
+  color: white;
+  padding: 2px 5px;
+  border-radius: 3px;
+  font-size: 0.9em;
+  margin-right: 5px;
+}
+
+.education-timeline {
+  position: relative;
+  padding-left: 30px;
+}
+
+.education-timeline::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  width: 2px;
+  background: var(--secondary-color);
+}
+
+.education-item {
+  position: relative;
+  margin-bottom: 30px;
+  padding: 20px;
+  background: var(--code-bg-color);
+  border-radius: 5px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.education-item::before {
+  content: '';
+  position: absolute;
+  left: -34px;
+  top: 25px;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: var(--secondary-color);
+  border: 2px solid white;
+}
+
+.education-icon {
+  font-size: 2rem;
+  color: var(--primary-color);
+  margin-bottom: 10px;
+}
+
+@media (max-width: 992px) {
+  #table-of-contents {
+    display: none;
+  }
+}
+
+.certification-card {
+  border: 1px solid var(--secondary-color);
+  border-radius: 10px;
+  padding: 20px;
+  margin-bottom: 20px;
+  background-color: var(--code-bg-color);
+  transition: all 0.3s ease;
+}
+
+.certification-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.certification-icon {
+  font-size: 2.5rem;
+  color: var(--secondary-color);
+  margin-bottom: 15px;
+}
