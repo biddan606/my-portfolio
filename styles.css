@@ -1,177 +1,310 @@
 :root {
-  --primary-color: #2c3e50;
-  --secondary-color: #27ae60;
-  --background-color: #ecf0f1;
-  --text-color: #34495e;
-  --code-bg-color: #f7f9fb;
+  --primary-color: #333;
+  --secondary-color: #3182f6;  /* 토스의 파란색 */
+  --background-color: #fff;
+  --text-color: #333;
+  --border-color: #e9ecef;
+  --link-color: #3182f6;
 }
 
 body {
-  font-family: 'Roboto', sans-serif;
+  font-family: 'Spoqa Han Sans Neo', 'sans-serif';
   background-color: var(--background-color);
   color: var(--text-color);
   line-height: 1.6;
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 20px;
 }
 
-#profile .row {
+h2 {
+  color: var(--secondary-color);
+  font-weight: 700;
+  font-size: 1.6em;
+  margin-bottom: 1em;
+  padding-bottom: 0.5em;
+  border-bottom: 2px solid var(--secondary-color);
+}
+
+section {
+  margin-bottom: 2.5em;
+  border-bottom: 1px solid var(--border-color);
+  padding-bottom: 1.5em;
+}
+
+/* 프로필 섹션 */
+.profile-container {
   display: flex;
-  justify-content: center;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1.5em;
+  margin-bottom: 1em;
 }
 
-#profile .col-auto {
-  padding: 0 15px;
+.intro-section {
+  flex: 1;
+}
+
+.intro-section h1 {
+  font-size: 2.2em;
+  margin-bottom: 0.2em;
+  color: var(--primary-color);
+}
+
+.intro-text {
+  font-size: 1em;
+  color: var(--text-color);
 }
 
 .profile-img {
-  width: 200px;
-  height: 200px;
-  object-fit: cover;
+  width: 120px;
+  height: 120px;
   border-radius: 50%;
-  /* 원형 이미지 */
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-  /* 그림자 효과 */
-  background-color: #f0f0f0;
-  /* 약간의 배경색 */
-  padding: 5px;
-  /* 이미지와 배경 사이의 간격 */
+  object-fit: cover;
 }
 
-/* 선택적: 이미지 호버 효과 */
-.profile-img:hover {
-  transform: scale(1.05);
-  transition: transform 0.3s ease;
+.contact-info {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 0.3em;
 }
 
-#table-of-contents {
-  position: fixed;
-  top: 70px;
-  right: 20px;
-  z-index: 1000;
-  background: var(--code-bg-color);
-  border: 1px solid var(--secondary-color);
-  border-radius: 5px;
-  padding: 15px;
-  max-width: 250px;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-  font-family: 'Fira Code', monospace;
+.contact-item {
+  display: flex;
+  align-items: center;
+  font-size: 0.9em;
 }
 
-#table-of-contents ul {
-  list-style-type: none;
-  padding-left: 0;
+.contact-item i {
+  width: 20px;
+  color: var(--secondary-color);
+  margin-right: 0.5em;
 }
 
-#table-of-contents ul li {
-  margin-bottom: 10px;
-}
-
-#table-of-contents a {
-  color: var(--primary-color);
+.contact-item a {
+  color: var(--text-color);
   text-decoration: none;
 }
 
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-  color: var(--primary-color);
-  font-family: 'Fira Code', monospace;
-}
+@media (max-width: 768px) {
+  .profile-container {
+    flex-direction: column;
+    text-align: center;
+    gap: 1em;
+  }
 
-.card {
-  border: none;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-  transition: all 0.3s ease;
-  background-color: var(--code-bg-color);
-}
+  .profile-img {
+    order: -1;
+  }
 
-.card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
-}
+  .contact-info {
+    width: 100%;
+  }
 
-.list-group-item {
-  background-color: var(--code-bg-color);
-  border-left: 3px solid var(--secondary-color);
-  margin-bottom: 10px;
-}
-
-.tech-stack {
-  font-family: 'Fira Code', monospace;
-  background-color: var(--primary-color);
-  color: white;
-  padding: 2px 5px;
-  border-radius: 3px;
-  font-size: 0.9em;
-  margin-right: 5px;
-}
-
-.education-timeline {
-  position: relative;
-  padding-left: 30px;
-}
-
-.education-timeline::before {
-  content: '';
-  position: absolute;
-  left: 0;
-  top: 0;
-  bottom: 0;
-  width: 2px;
-  background: var(--secondary-color);
-}
-
-.education-item {
-  position: relative;
-  margin-bottom: 30px;
-  padding: 20px;
-  background: var(--code-bg-color);
-  border-radius: 5px;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-}
-
-.education-item::before {
-  content: '';
-  position: absolute;
-  left: -34px;
-  top: 25px;
-  width: 10px;
-  height: 10px;
-  border-radius: 50%;
-  background: var(--secondary-color);
-  border: 2px solid white;
-}
-
-.education-icon {
-  font-size: 2rem;
-  color: var(--primary-color);
-  margin-bottom: 10px;
-}
-
-@media (max-width: 992px) {
-  #table-of-contents {
-    display: none;
+  .contact-item {
+    justify-content: center;
   }
 }
 
-.certification-card {
-  border: 1px solid var(--secondary-color);
-  border-radius: 10px;
-  padding: 20px;
-  margin-bottom: 20px;
-  background-color: var(--code-bg-color);
-  transition: all 0.3s ease;
+/* 어바웃 섹션 */
+#about {
+  margin-bottom: 1.5em;
 }
 
-.certification-card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-}
-
-.certification-icon {
-  font-size: 2.5rem;
+#about h2 {
   color: var(--secondary-color);
-  margin-bottom: 15px;
+  margin-bottom: 0.8em;
+  padding-bottom: 0.3em;
+  border-bottom: 2px solid var(--secondary-color);
+}
+
+.about-content {
+  max-width: 800px;
+}
+
+.about-intro {
+  font-weight: bold;
+  color: var(--primary-color);
+  margin-bottom: 0.5em;
+}
+
+.about-item {
+  margin-bottom: 0.5em;
+  line-height: 1.4;
+}
+
+.about-keyword {
+  font-weight: bold;
+  color: var(--secondary-color);
+  margin-right: 0.3em;
+}
+
+@media (max-width: 768px) {
+  .about-content {
+    padding: 0 10px;
+  }
+}
+
+/* 스킬 섹션 */
+.skills-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 20px;
+}
+
+.skill-item {
+  background-color: #f8f9fa;
+  border-radius: 8px;
+  padding: 15px;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.skill-item h3 {
+  color: var(--secondary-color);
+  margin-bottom: 10px;
+  font-size: 1.1em;
+}
+
+.skill-item p {
+  font-size: 0.9em;
+  line-height: 1.5;
+  color: var(--text-color);
+}
+
+/* 프로젝트 섹션 */
+.project-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 20px;
+}
+
+.project-item {
+  background-color: #f8f9fa;
+  border-radius: 8px;
+  padding: 15px;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.project-item h3 {
+  color: var(--secondary-color);
+  margin-bottom: 5px;
+}
+
+.project-duration {
+  font-size: 0.9em;
+  color: var(--secondary-color);
+  margin-bottom: 10px;
+}
+
+.project-description {
+  font-size: 0.95em;
+  margin-bottom: 10px;
+}
+
+.project-highlights {
+  padding-left: 20px;
+  margin-bottom: 10px;
+}
+
+.project-tech {
+  font-size: 0.9em;
+  font-style: italic;
+  margin-bottom: 10px;
+}
+
+.project-link {
+  display: inline-block;
+  color: var(--link-color);
+  text-decoration: none;
+}
+
+/* 교육 섹션 */
+.education-container {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.education-item {
+  display: flex;
+  gap: 15px;
+  align-items: flex-start;
+  background-color: #f8f9fa;
+  border-radius: 8px;
+  padding: 12px;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+}
+
+.education-date {
+  min-width: 110px;
+  font-weight: bold;
+  color: var(--secondary-color);
+}
+
+.education-content {
+  flex-grow: 1;
+}
+
+.education-content h3 {
+  margin: 0 0 5px 0;
+  color: var(--primary-color);
+  font-size: 1em;
+}
+
+.education-description {
+  font-size: 0.9em;
+  margin: 0;
+  color: var(--text-color);
+}
+
+@media (max-width: 600px) {
+  .education-item {
+    flex-direction: column;
+  }
+
+  .education-date {
+    margin-bottom: 5px;
+  }
+}
+
+/* 자격증 섹션 */
+.certification-list {
+  list-style-type: none;
+  padding: 0;
+}
+
+.certification-list li {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 0;
+  border-bottom: 1px solid var(--border-color);
+}
+
+.certification-list li:last-child {
+  border-bottom: none;
+}
+
+.certification-name {
+  font-weight: bold;
+}
+
+.certification-date {
+  color: var(--secondary-color);
+}
+
+@media print {
+  #profile, #about, #skills {
+    page-break-inside: avoid;
+    page-break-after: avoid;
+  }
+
+  #projects, #education {
+    page-break-before: always;
+  }
+
+  #certifications {
+    page-break-inside: avoid;
+  }
 }
